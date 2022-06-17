@@ -1,1 +1,69 @@
- 
+ body{
+    margin: 0;
+ }
+ .search-form{
+    display: flex;
+    background-color: rgb(75, 75, 216);
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+box-shadow: 0px 1px 30px 5px rgba(0, 0, 0, .5);
+margin-bottom: 20px;
+
+ }
+ .search-form > input{
+    height: 28px;
+    border: 0px;
+    display: block;
+    margin-top: auto;
+        margin-bottom: auto;
+      outline: none;
+   margin-left: auto
+   
+ }
+ .search-form>button{
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+        margin-right: auto
+  
+ }
+ .icon{
+width:17px;
+height: 17px;
+ }
+ .icon:hover{
+width: 22px;
+    height: 22px;
+ }
+ .load-more{
+   width: 120px;
+   height: 50px;
+   display: block;
+  margin: 25 auto;
+  background-color: rgb(75, 75, 216);
+  border: 0px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+box-shadow:  0px 3px 10px rgba(0, 0, 0, .2);
+
+ }
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   white-space: nowrap;
+   -webkit-clip-path: inset(100%);
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
