@@ -18,7 +18,7 @@ async function onSearch(e) {
   showButton(false);
   newsApiServ.searchQuery = e.currentTarget.elements.searchQuery.value;
    if (newsApiServ.searchQuery === '') {
-    Notiflix.Notify.failure('Enter the search value!');
+     Notiflix.Notify.failure('Enter the search value!');
     return;
   }
   newsApiServ.resetPage();
