@@ -7,7 +7,9 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 const formSearch = document.querySelector(".search-form");
 const loadMore = document.querySelector(".load-more");
 const gallery = document.querySelector(".gallery");
+const spinner  = document.querySelector(".sk-circle");
 const newsApiServ = new NewsApiServ();
+
 showButton(false)
 
 formSearch.addEventListener('submit', onSearch);
@@ -15,6 +17,7 @@ loadMore.addEventListener('click', onLoadMore);
 
 async function onSearch(e) {
   e.preventDefault();
+
   showButton(false);
   newsApiServ.searchQuery = e.currentTarget.elements.searchQuery.value;
    if (newsApiServ.searchQuery === '') {
@@ -24,9 +27,12 @@ async function onSearch(e) {
   newsApiServ.resetPage();
   gallery.innerHTML = "";
   
-  try{
+  try {
+    
+ 
     const fetchCards = await newsApiServ.fetchArticles();
     const addCards = await addAllCards(fetchCards);
+
     if(fetchCards.totalHits>0){
      return  hoorey = await Notiflix.Notify.success(`Hooray! We found ${fetchCards.totalHits} images.`);
     }
@@ -34,13 +40,25 @@ async function onSearch(e) {
 }
   catch (error)  {console.log(error.message) }
 }
+function enable() {
+  loadMore.disabled = false;
+    loadMore.classList.remove('dis-btn')
+  spinner.classList.add('visually-hidden')
+}
+function disable() {
+  loadMore.disabled = true;
+  loadMore.classList.add('dis-btn')
+  spinner.classList.remove('visually-hidden')
+}
 
 async function onLoadMore() {
+  disable()
+  
+  try {
 
-  try{
     const fetchCards = await newsApiServ.fetchArticles();
     const addCards = await addAllCards(fetchCards);
-  
+  enable()
     return addCards;
 }
   catch (error)  {console.log(error.message) }
