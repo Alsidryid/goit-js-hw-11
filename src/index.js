@@ -1,7 +1,7 @@
 import './css/style.css';
 import Notiflix from 'notiflix';
 import NewsApiServ from './news-service';
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from "simplelightbox"
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 const formSearch = document.querySelector(".search-form");
